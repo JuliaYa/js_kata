@@ -1,0 +1,1 @@
+This repository just keeps my js solutions for katas from [Codewars] (https://www.codewars.com/)

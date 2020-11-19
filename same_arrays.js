@@ -35,22 +35,37 @@
 
 
 function comp(array1, array2) {
-    if (!array1 || !array2) {
-      return false;
-    }
-    
-    let reducer = function(answer, el) {
-      if(array2.indexOf(el) === -1) {
+    if (array1 == null || array2 == null) {
         return false;
-      }
-      return true;
     }
-    
+
     let array1Squared = array1.map(el => el*el);
-    console.log(array1Squared);
-    console.log(array2);
-    
-    return array1Squared.reduce(reducer, true);
+
+    for (let i = 0; i < array1Squared.length; i++) { 
+        let index = array2.indexOf(array1Squared[i]);
+        if(index !== -1) {
+            array2[index] = 'x';
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
+
+// submitted solution
+function comp2(array1, array2) {
+    if (array1 == null || array2 == null) {
+        return false;
+    }
+
+    let sortedSquaredArray1 = array1.map(el => el*el).sort();
+    let sorterArray2 = array2.sort();
+
+    if(sortedSquaredArray1.toString() === sorterArray2.toString()){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 const a1 = [121, 144, 19, 161, 19, 144, 19, 11];
@@ -58,7 +73,10 @@ const a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19];
 const a3 = [132, 14641, 20736, 361, 25921, 361, 20736, 361];
 
 const a4 = [85, 81, 86];
-const a5 = [7225, 6562, 7396]
+const a5 = [7225, 6562, 7396];
+const a6 = [70, 70];
+const a7 = [4901, 4900];
 
-console.log(comp(a1, a2));
-console.log(comp(a4, a5));
+console.log(comp2(a1, a2));
+console.log(comp([], []));
+console.log(comp(null, []));

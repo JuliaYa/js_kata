@@ -15,7 +15,7 @@
 // (that's not a walk, that's standing still!).
 
 
-function isValidWalk(walk) {
+export default function isValidWalk(walk) {
   if (walk.length !== 10) {
     return false;
   }
@@ -47,6 +47,3 @@ function isValidWalk(walk) {
 
   return false;
 };
-
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s'])); // => true
-console.log(isValidWalk(['n','s','n']));  // => false

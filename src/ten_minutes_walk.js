@@ -41,9 +41,5 @@ export default function isValidWalk(walk) {
     }
   });
 
-  if (coordinates.x === 0 && coordinates.y === 0) {
-    return true;
-  }
-
-  return false;
+  return coordinates.x === 0 && coordinates.y === 0;
 };

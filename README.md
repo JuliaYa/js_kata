@@ -1,3 +1,5 @@
+![CI](https://github.com/JuliaYa/js_kata/workflows/CI/badge.svg?branch=master)
+
 This repository just keeps my js solutions for katas from [Codewars](https://www.codewars.com/)
 
 ## What I learn while solving katas:

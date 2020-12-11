@@ -41,9 +41,5 @@ export default function comp(array1, array2) {
     let sortedSquaredArray1 = array1.map(el => el*el).sort();
     let sortedArray2 = array2.sort();
 
-    if(sortedSquaredArray1.toString() === sortedArray2.toString()){
-        return true;
-    }
-    
-    return false;
+    return sortedSquaredArray1.toString() === sortedArray2.toString();
 }

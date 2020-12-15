@@ -11,7 +11,7 @@
 //(5 and 7) to make it a consecutive array of numbers
 // from 4 to 8. Numbers in arr will be unique.
 
-function consecutive(arr) { //859ms
+export default function consecutive(arr) {
   if (arr.length < 2){
     return 0;
   }
@@ -33,31 +33,3 @@ function consecutive(arr) { //859ms
   
   return numberOfElements;
 };
-
-
-function consecutive2(arr) {  //844ms
-  if (arr.length < 2){
-    return 0;
-  }
-  
-  return arr.sort(function(a, b) { return a - b; })
-    .reduce((numberOfElements, currentElement, index, array) => {
-      if (index === array.length - 1){
-        return numberOfElements;
-      }
-
-      let diff = array[index + 1] - currentElement;
-
-      if(diff === 1) {
-        return numberOfElements;
-      }
-
-      return numberOfElements + diff - 1;
-    }, 0);
-};
-
-console.log(consecutive2([4,8,6]));  // => 2
-console.log(consecutive2([1,2,3,4])); // => 0
-console.log(consecutive2([]));       // => 0
-console.log(consecutive2([1]));       // => 0
-console.log(consecutive2([4,8,6,14,18])); // => 10

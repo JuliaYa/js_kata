@@ -15,7 +15,7 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-function duplicateCount(text){
+export default function duplicateCount(text){
   let duplicates = new Set();
   let withoutDuplicates = new Set();
   let letters = text.toLowerCase().split('');
@@ -29,11 +29,4 @@ function duplicateCount(text){
   });
 
   return duplicates.size;
-}
-
-console.log(duplicateCount("abcde")); // 0
-console.log(duplicateCount("aabbcde")); // 2
-console.log(duplicateCount("aabBcde")); // 2
-console.log(duplicateCount("Indivisibility")); // 1
-console.log(duplicateCount("Indivisibilities")); // 2
-
+};

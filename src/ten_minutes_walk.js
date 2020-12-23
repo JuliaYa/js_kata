@@ -11,18 +11,17 @@
 // early or late!) and will, of course, return you to your starting point. Return false otherwise.
 
 // Note: you will always receive a valid array containing a random assortment of direction letters
-// ('n', 's', 'e', or 'w' only). It will never give you an empty array 
+// ('n', 's', 'e', or 'w' only). It will never give you an empty array
 // (that's not a walk, that's standing still!).
-
 
 export default function isValidWalk(walk) {
   if (walk.length !== 10) {
     return false;
   }
 
-  let coordinates = {x: 0, y: 0};
+  const coordinates = { x: 0, y: 0 };
 
-  walk.forEach(element => {
+  walk.forEach((element) => {
     switch (element) {
       case 'n':
         coordinates.y += 1;
@@ -42,4 +41,4 @@ export default function isValidWalk(walk) {
   });
 
   return coordinates.x === 0 && coordinates.y === 0;
-};
+}

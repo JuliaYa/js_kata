@@ -11,7 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/JuliaYa/js_kata.git"
   },
-  "type": "module",
   "author": "JuliaYa",
   "license": "ISC",
   "bugs": {
@@ -19,15 +18,21 @@
   },
   "homepage": "https://github.com/JuliaYa/js_kata#readme",
   "devDependencies": {
-    "ava": "^3.13.0",
+    "ava": "^3.14.0",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
   },
   "ava": {
     "files": [
-      "tests/*.js"
+      "./tests/*.test.js"
+    ],
+    "require": [
+      "esm"
     ],
     "failWithoutAssertions": false
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
   }
 }

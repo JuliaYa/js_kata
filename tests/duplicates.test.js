@@ -1,5 +1,5 @@
 import test from 'ava';
-import duplicateCount from '../src/duplicates.js';
+import duplicateCount from '../src/duplicates';
 
 test('Return 0 for empty string.', (t) => {
   t.is(duplicateCount(''), 0);

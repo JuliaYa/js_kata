@@ -1,5 +1,5 @@
 import test from 'ava';
-import consecutive from '../src/consecutive_nums.js';
+import consecutive from '../src/consecutive_nums';
 
 test('Return 0 for empty array.', (t) => {
   t.is(consecutive([]), 0);

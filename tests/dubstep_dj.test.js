@@ -1,7 +1,7 @@
 import test from 'ava';
-import songDecoder from '../src/dubstep_dj.js';
+import songDecoder from '../src/dubstep_dj';
 
-test('Remix succesfully decoded to initial song.', (t) => {
+test('Remix successfully decoded to initial song.', (t) => {
   t.is(songDecoder('AWUBBWUBC'), 'A B C');
   t.is(songDecoder('AWUBWUBWUBBWUBWUBWUBC'), 'A B C');
 });

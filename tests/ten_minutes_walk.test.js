@@ -1,5 +1,5 @@
 import test from 'ava';
-import isValidWalk from '../src/ten_minutes_walk.js';
+import isValidWalk from '../src/ten_minutes_walk';
 
 test('Person end up at starting point after 10 minutes.', (t) => {
   t.is(isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's']), true);

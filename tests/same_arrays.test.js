@@ -1,5 +1,5 @@
 import test from 'ava';
-import comp from '../src/same_arrays.js';
+import comp from '../src/same_arrays';
 
 test('Return false if one or both of arrays are null or undefined.', (t) => {
   t.false(comp([3, 6, 9], undefined));

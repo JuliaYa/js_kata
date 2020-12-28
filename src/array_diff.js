@@ -10,6 +10,6 @@
 
 // arrayDiff([1,2,2,2,3],[2]) == [1,3]
 
-export default function(firstArray, secondArray) {
-  return firstArray.filter(value => secondArray.indexOf(value) === -1);
-};
+export default function arrayDiff(firstArray, secondArray) {
+  return firstArray.filter((value) => secondArray.indexOf(value) === -1);
+}

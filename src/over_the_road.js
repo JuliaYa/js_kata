@@ -34,19 +34,22 @@
 // To solve this, you need to think of a way to do the kata without making massive
 // lists or huge for loops. Read the description for some inspiration :)
 
+// Algorithm description
+
+// N_odd = 2k - 1
+// N_even = m - 2k + 2
+// k - home position
+// m = 2 * n
+//
+// k = (N_odd + 1) / 2
+// k = (m - N_even + 2) / 2
+// N_odd = m - N_even + 1
+// for both sides of the street, we get the same formula:
+//
+// N = m - address + 1
+//
+// N - number over the road
+
 export default function overTheRoad(address, n) {
-  // N_odd = 2k - 1
-  // N_even = m - 2k + 2
-  // k - home position
-  // m = 2 * n
-  //
-  // k = (N_odd + 1) / 2
-  // k = (m - N_even + 2) / 2
-  // N_odd = m - N_even + 1
-  // for both sides of the street, we get the same formula:
-  //
-  // N = m - address + 1
-  //
-  // N - number over the road
   return 2 * n - address + 1;
 }

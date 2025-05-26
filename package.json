@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/JuliaYa/js_kata#readme",
   "devDependencies": {
-    "ava": "^3.14.0",
+    "ava": "^6.3.0",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"

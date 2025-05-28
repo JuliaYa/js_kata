@@ -50,6 +50,6 @@
 //
 // N - number over the road
 
-export default function overTheRoad(address, n) {
+export function overTheRoad(address, n) {
   return 2 * n - address + 1;
 }

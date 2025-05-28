@@ -5,7 +5,7 @@
 // ["jo", "nelson", "jurie"] -->  ["Jo", "Nelson", "Jurie"]
 // ["KARLY", "DANIEL", "KELSEY"] --> ["Karly", "Daniel", "Kelsey"]
 
-export default function capMe(names) {
+export function capMe(names) {
   var lowercaseNames = names.map(name => name.toLowerCase());
   return lowercaseNames.map(name => name.charAt(0).toUpperCase() + name.slice(1))
 }

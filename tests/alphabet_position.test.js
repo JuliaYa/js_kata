@@ -1,24 +1,35 @@
-import test from 'ava';
-import alphabetPosition from '../src/alphabet_position';
+const { strictEqual } = require('chai').assert;
+const { alphabetPosition } = require('../src/alphabet_position');
 
-test('Returns empty string for text without letters.', (t) => {
-  t.is(
-    alphabetPosition('1984, 2000, 2020'),
-    '',
-  );
-  t.is(
-    alphabetPosition('! & %.36$$#'),
-    '',
-  );
-});
 
-test('Returns a string that contains alphabet position of letters.', (t) => {
-  t.is(
-    alphabetPosition("The sunset sets at twelve o' clock."),
-    '20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11',
-  );
-  t.is(
-    alphabetPosition('The narwhal bacons at midnight.'),
-    '20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20',
-  );
+function ap(text) {
+  return text.toLowerCase().split('').filter(function(l) {
+    return /[a-z]/.test(l);
+  }).map(function(l) {
+    return l.charCodeAt() - 96;
+  }).join(' ');
+}
+
+function randomChar() {
+  let chars = 'abcdefghijklmnopqrstuvwxyz1234567890-=!@#$%^&*()_+[];,./\{}:|<>? ', rand  = Math.floor(Math.random() * chars.length);
+  return chars[rand];
+}
+
+describe("Replace with alphabet position",()=>{
+  it("Fixed tests:",()=>{
+    for(let i = 65; i <= 122; i++) {
+      let letter = String.fromCharCode(i);
+      strictEqual(alphabetPosition(letter), ap(letter));
+    }
+    strictEqual( alphabetPosition("-.-'"), "" );
+  });
 });
+  describe("Randomly generated tests:",()=>{
+    for(let i = 0; i < 50; i++) {
+      let x = "";
+      for(let j= 0; j < 8; j++) {
+        x += randomChar();
+      }
+      it(`Testing "${x}"`,()=>strictEqual(alphabetPosition(x), ap(x)));
+    }
+  });

@@ -30,6 +30,6 @@
 // songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
 //   // =>  WE ARE THE CHAMPIONS MY FRIEND
 
-export default function songDecoder(song) {
+export function songDecoder(song) {
   return song.replace(/WUB/g, ' ').trim().replace(/[ ]+/g, ' ');
 }

@@ -33,7 +33,7 @@
 // a or b might be nil or null or None or nothing.
 // If a or b are nil (or null or None), the problem doesn't make sense so return false.
 
-export default function comp(array1, array2) {
+export function comp(array1, array2) {
   if (!array1 || !array2) {
     return false;
   }

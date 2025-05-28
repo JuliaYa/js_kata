@@ -11,7 +11,7 @@
 // (5 and 7) to make it a consecutive array of numbers
 // from 4 to 8. Numbers in arr will be unique.
 
-export default function consecutive(arr) {
+export function consecutive(arr) {
   if (arr.length < 2) {
     return 0;
   }

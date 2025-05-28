@@ -15,7 +15,7 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-export default function duplicateCount(text) {
+export function duplicateCount(text) {
   const duplicates = new Set();
   const withoutDuplicates = new Set();
   const letters = text.toLowerCase().split('');

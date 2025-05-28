@@ -1,20 +1,35 @@
-import test from 'ava';
-import consecutive from '../src/consecutive_nums';
+const { consecutive } = require('../src/consecutive_nums');
+const { strictEqual } = require('chai').assert;
 
-test('Return 0 for empty array.', (t) => {
-  t.is(consecutive([]), 0);
-});
+describe('Tests', function () {
+ 
+  function doTest(input, expected) {
+    const actual = consecutive(input.slice());
+    strictEqual(actual, expected, `for array = ${JSON.stringify(input)}\n`);
+  }
 
-test('Return 0 for array with one element.', (t) => {
-  t.is(consecutive([1]), 0);
-});
+  it('sample tests', function () {
+    doTest([4, 8, 6], 2);
+    doTest([1, 2, 3, 4], 0);
+    doTest([], 0);
+    doTest([1], 0);
+  });
 
-test('Return 0 for array with consecutive numbers.', (t) => {
-  t.is(consecutive([1, 2, 3, 4, 5]), 0);
-  t.is(consecutive([3, 4, 1, 2]), 0);
-});
+  function solution(arr) {
+    arr = arr.slice().sort(function (a, b) { return a - b; });
+    return (arr[arr.length - 1] - arr[0]) - (arr.length - 1) || 0;
+  }
 
-test('Return a count of numbers that make the array consecutive.', (t) => {
-  t.is(consecutive([4, 8, 6]), 2);
-  t.is(consecutive([4, 8, 6, 14, 18]), 10);
+  function rand(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  it('random tests', function () {
+    for (let test = 0; test < 100; test++) {
+      const array = [...new Set(
+        Array.from({length : rand(0, 30)}, _ => rand(-60, +60))
+      )];
+      doTest(array, solution(array));
+    }
+  });
 });

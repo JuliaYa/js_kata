@@ -4,7 +4,7 @@
   "description": "Solutions for katas from Codewars",
   "main": "src/ten_minutes_walk.js",
   "scripts": {
-    "test": "npx ava",
+    "test": "mocha tests",
     "lint": "npx eslint ./src ./tests --fix"
   },
   "repository": {
@@ -18,21 +18,12 @@
   },
   "homepage": "https://github.com/JuliaYa/js_kata#readme",
   "devDependencies": {
-    "ava": "^6.3.0",
     "eslint": "^7.16.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1"
   },
-  "ava": {
-    "files": [
-      "./tests/*.test.js"
-    ],
-    "require": [
-      "esm"
-    ],
-    "failWithoutAssertions": false
-  },
   "dependencies": {
-    "esm": "^3.2.25"
+    "chai": "^5.2.0",
+    "mocha": "^11.5.0"
   }
 }

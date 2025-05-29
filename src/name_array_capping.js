@@ -1,4 +1,4 @@
-// Create a function that accepts an array of names, and returns an array 
+// Create a function that accepts an array of names, and returns an array
 // of each name with its first letter capitalized and the remainder in lowercase.
 
 // Examples
@@ -6,6 +6,6 @@
 // ["KARLY", "DANIEL", "KELSEY"] --> ["Karly", "Daniel", "Kelsey"]
 
 export function capMe(names) {
-  var lowercaseNames = names.map(name => name.toLowerCase());
-  return lowercaseNames.map(name => name.charAt(0).toUpperCase() + name.slice(1))
+  const lowercaseNames = names.map((name) => name.toLowerCase());
+  return lowercaseNames.map((name) => name.charAt(0).toUpperCase() + name.slice(1));
 }

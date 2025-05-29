@@ -17,7 +17,6 @@ describe('capMe', () => {
 
     const randOne = String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122));
     const randTwo = String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122));
-    const randThree = String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122)) + String.fromCharCode(getRandomInt(97, 122));
 
     assert.deepEqual(capMe([randOne, randTwo]), [randOne.charAt(0).toUpperCase() + randOne.substring(1).toLowerCase(), randTwo.charAt(0).toUpperCase() + randTwo.substring(1).toLowerCase()]);
   });

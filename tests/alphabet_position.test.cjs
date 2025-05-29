@@ -7,7 +7,7 @@ function ap(text) {
 }
 
 function randomChar() {
-  const chars = 'abcdefghijklmnopqrstuvwxyz1234567890-=!@#$%^&*()_+[];,./\{}:|<>? '; const
+  const chars = 'abcdefghijklmnopqrstuvwxyz1234567890-=!@#$%^&*()_+[];,./{}:|<>? '; const
     rand = Math.floor(Math.random() * chars.length);
   return chars[rand];
 }

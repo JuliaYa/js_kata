@@ -109,8 +109,8 @@ describe('Random tests', () => {
   for (let i = 0; i < 200; i++) {
     // modified from 1,8 to 10,25
     testlen = randint(10, 25);
-    let a1 = []; let
-      a2 = [];
+    let a1 = []; 
+    let a2 = [];
     for (let j = 0; j < testlen; j++) {
       // elem=randint(0,100);
       elem = randint(0, 10);

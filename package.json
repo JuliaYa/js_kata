@@ -19,8 +19,9 @@
   },
   "homepage": "https://github.com/JuliaYa/js_kata#readme",
   "devDependencies": {
+    "@eslint/js": "^9.27.0",
     "eslint": "^9.27.0",
-    "eslint-config-airbnb-base": "^15.0.0"
+    "globals": "^16.2.0"
   },
   "dependencies": {
     "chai": "^5.2.0",

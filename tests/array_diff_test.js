@@ -33,15 +33,13 @@ describe('Random tests', () => {
   const generateRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
   for (let i = 0; i < 40; i++) {
-    let a; let b; let expected; let aLength; let
-      bLength;
-    a = [];
-    b = [];
-    aLength = generateRandomInt(0, 20);
-    bLength = generateRandomInt(0, aLength);
+    const a = [];
+    let b = [];
+    const aLength = generateRandomInt(0, 20);
+    const bLength = generateRandomInt(0, aLength);
     for (let j = 0; j < aLength; j++) a.push(generateRandomInt(0, 40) - 20);
     b = shuffle(a).slice(0, generateRandomInt(0, aLength));
-    expected = array_diff_sol(a, b);
+    const expected = array_diff_sol(a, b);
     it(`Testing for arrayDiff([${a}],[${b}])`, () => {
       assert.deepEqual(arrayDiff(a, b), expected, 'Should work for random arrays too');
     });

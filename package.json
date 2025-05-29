@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Solutions for katas from Codewars",
   "main": "src/ten_minutes_walk.js",
+  "type": "module",
   "scripts": {
     "test": "mocha tests",
     "lint": "npx eslint ./src ./tests --fix"
@@ -18,9 +19,8 @@
   },
   "homepage": "https://github.com/JuliaYa/js_kata#readme",
   "devDependencies": {
-    "eslint": "^7.16.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint": "^9.27.0",
+    "eslint-config-airbnb-base": "^15.0.0"
   },
   "dependencies": {
     "chai": "^5.2.0",

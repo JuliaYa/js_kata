@@ -5,8 +5,9 @@
   "main": "src/ten_minutes_walk.js",
   "type": "module",
   "scripts": {
-    "test": "mocha tests",
-    "lint": "npx eslint ./src ./tests --fix"
+    "tests": "mocha tests",
+    "test": "mocha",
+    "lint": "npx eslint ./src --fix"
   },
   "repository": {
     "type": "git",

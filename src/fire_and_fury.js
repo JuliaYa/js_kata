@@ -54,44 +54,50 @@ function parseMessage(str) {
   return result;
 }
 
-export function fireAndFury (tweet) {
+export function fireAndFury(tweet) {
   const reg = /^[FIREUY]+$/;
 
-  if (reg.test(tweet)){  // if no unexpected letters are encountered
-    var hlpArray = parseMessage(tweet);
-    if(hlpArray.length === 0) return 'Fake tweet.'
-
-    let decipheredTweet ='';
-
-    hlpArray.forEach(pair => {
-      let phrase = '';
-      let word = pair[0];   // mb destructurisation
-      let count = pair[1];
-      if(word === 'FIRE'){
-        phrase = 'You ';
-        count--;
-        while(count > 0){
-          phrase += 'and you ';
-          count--;
-        }
-        phrase += 'are fired!';
-      }else{
-        phrase = 'I am ';
-        count--;
-        while(count > 0){
-          phrase += 'really ';
-          count--;
-        }
-        phrase += 'furious.';
-      }
-      if (decipheredTweet.length === 0){
-        decipheredTweet = phrase;
-      }else{
-        decipheredTweet = decipheredTweet + ' ' + phrase;
-      }
-    })
-    return decipheredTweet;
-  }else{
+  if (!reg.test(tweet)) { // if unexpected letters are encountered
     return 'Fake tweet.';
   }
+  
+  var hlpArray = parseMessage(tweet);
+  if (hlpArray.length === 0) return 'Fake tweet.'
+
+  let decipheredTweet = '';
+
+  hlpArray.forEach(pair => {
+    let phrase = '';
+    let [word, count] = pair;
+
+    if (word === 'FIRE') {
+      phrase = 'You ';
+      count--;
+
+      while (count > 0) {
+        phrase += 'and you ';
+        count--;
+      }
+
+      phrase += 'are fired!';
+    } else {
+      phrase = 'I am ';
+      count--;
+
+      while (count > 0) {
+        phrase += 'really ';
+        count--;
+      }
+
+      phrase += 'furious.';
+    }
+
+    if (decipheredTweet.length === 0) {
+      decipheredTweet = phrase;
+    } else {
+      decipheredTweet = decipheredTweet + ' ' + phrase;
+    }
+  });
+
+  return decipheredTweet;
 }

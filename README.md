@@ -12,7 +12,7 @@ This repository just keeps my js solutions for katas from [Codewars](https://www
 * Eslint config moved from 'eslintrc.json' to 'eslint.config.js'
 
 * new file extensions .cjs and .mjs
-
+*will format it later*
 CommonJS (CJS) is a module system for JavaScript, primarily used in server-side environments like Node.js. It treats each file as a separate module, allowing you to import/export functionality between files using require and module.exports. 
 Here's a breakdown:
 Key Features:
@@ -42,3 +42,5 @@ File Extensions:
 .cjs: Explicitly indicates a CommonJS module.
 .mjs: Explicitly indicates an ES Module.
 Note: Node.js still uses CommonJS as its default module system, but ESM is increasingly used in new projects.
+
+* str.repeat(count) - will repeat string 'count' times

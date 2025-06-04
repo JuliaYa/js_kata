@@ -29,29 +29,14 @@
 // ex2. FIREYYFURYYFURYYFURRYFIRE = "You are fired! I am really furious. You are fired!"
 // ex3. FYRYFIRUFIRUFURE = "Fake tweet."
 
-function parseMessage(str) {
 
-  const matches = [...str.matchAll(/FIRE|FURY/g)].map(m => m[0]);
-
-  if (matches.length === 0) return [];
-
-  const result = [];
-  let current = matches[0];
-  let count = 1;
-
-  for (let i = 1; i < matches.length; i++) {
-    if (matches[i] === current) {
-      count++;
-    } else {
-      result.push([current, count]);
-      current = matches[i];
-      count = 1;
+function convertToText(block) {
+    const type = /FIRE/.test(block) ? 'FIRE' : 'FURY';
+    const count = block.length/4 - 1;
+    switch (type) {
+        case "FIRE" : return `You${" and you".repeat(count)} are fired!`
+        case "FURY" : return `I am${" really".repeat(count)} furious.`
     }
-  }
-
-  result.push([current, count]);
-
-  return result;
 }
 
 export function fireAndFury(tweet) {
@@ -61,43 +46,8 @@ export function fireAndFury(tweet) {
     return 'Fake tweet.';
   }
   
-  var hlpArray = parseMessage(tweet);
-  if (hlpArray.length === 0) return 'Fake tweet.'
-
-  let decipheredTweet = '';
-
-  hlpArray.forEach(pair => {
-    let phrase = '';
-    let [word, count] = pair;
-
-    if (word === 'FIRE') {
-      phrase = 'You ';
-      count--;
-
-      while (count > 0) {
-        phrase += 'and you ';
-        count--;
-      }
-
-      phrase += 'are fired!';
-    } else {
-      phrase = 'I am ';
-      count--;
-
-      while (count > 0) {
-        phrase += 'really ';
-        count--;
-      }
-
-      phrase += 'furious.';
-    }
-
-    if (decipheredTweet.length === 0) {
-      decipheredTweet = phrase;
-    } else {
-      decipheredTweet = decipheredTweet + ' ' + phrase;
-    }
-  });
-
-  return decipheredTweet;
+  let helpArray = tweet.match(/FIRE|FURY/g);
+  if (helpArray === null) return 'Fake tweet.'
+  
+  return helpArray.join('').match(/(FIRE)+|(FURY)+/g).map(block => convertToText(block)).join(' ');
 }
